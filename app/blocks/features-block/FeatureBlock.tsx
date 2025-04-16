@@ -1,4 +1,4 @@
-const Features = [
+const features = [
   {
     emoji: "🚀",
     title: "Ultrafast & Lightweight",
@@ -21,30 +21,26 @@ const Features = [
     emoji: "😃",
     title: "Delightful DX",
     description:
-      'Super clean APIs. First-class TypeScript support. Now, wee got "Types".',
+      'Super clean APIs. First-class TypeScript support. Now, we\'ve got "Types".',
   },
 ];
 
-
 const FeatureBlock = () => {
   return (
-      <div className="grid grid-cols-4 gap-4 ">
-          {Features.map((feature, index) => {
-              return (
-                <div key={feature.title} className="card bg-base-100  shadow-sm">
-                  <div className="flex flex-col gap-2">
-                          <h2 className="card-title text-xl font-bold">{ feature.emoji}+{feature.title}</h2>
-                          
-                          <p>{ feature.description}</p>
-                    
-                  </div>
-                </div>
-              );
-          }
-          )}
-              
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-4">
+      {features.map((feature) => (
+        <div key={feature.title} className="card bg-base-100 shadow-sm p-4">
+          <div className="flex flex-col gap-3 items-start">
+            <div className="text-4xl bg-base-200 p-3 rounded-md">
+              {feature.emoji}
+            </div>
+            <h2 className="card-title text-xl font-bold">{feature.title}</h2>
+            <p className="text-base text-gray-700">{feature.description}</p>
+          </div>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default FeatureBlock
+export default FeatureBlock;
