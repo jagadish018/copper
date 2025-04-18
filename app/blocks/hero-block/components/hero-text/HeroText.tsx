@@ -1,6 +1,9 @@
+"use client"
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 const HeroText = () => {
+    const router = useRouter();
   return (
     <div className="flex flex-col justify-start">
       <h1 className="text-5xl font-bold text-orange-500">Hono</h1>
@@ -16,10 +19,16 @@ const HeroText = () => {
         JavaScript runtime.
       </p>
       <div className="flex flex-row justify-start mt-8 gap-4">
-        <button className="btn  btn-soft btn-lg rounded-full bg-orange-500 hover:bg-amber-700">
+        <button
+          className="btn  btn-soft btn-lg rounded-full bg-orange-500 hover:bg-amber-700"
+          onClick={() => router.push("/docs")}
+        >
           Get started
         </button>
-        <button className="btn  btn-soft btn-lg rounded-full  hover:bg-amber-700 ">
+        <button
+          className="btn  btn-soft btn-lg rounded-full  hover:bg-amber-700 "
+          onClick={() => router.push("https://github.com/honojs/hono")}
+        >
           View on Github
         </button>
       </div>

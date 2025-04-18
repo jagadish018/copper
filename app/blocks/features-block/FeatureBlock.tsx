@@ -25,22 +25,25 @@ const features = [
   },
 ];
 
-const FeatureBlock = () => {
+const FeaturesBlock = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-4">
-      {features.map((feature) => (
-        <div key={feature.title} className="card bg-base-100 shadow-sm p-4">
-          <div className="flex flex-col gap-3 items-start">
-            <div className="text-4xl bg-base-200 p-3 rounded-md">
-              {feature.emoji}
+    <div className="grid grid-cols-4 gap-4">
+      {features.map((feature) => {
+        return (
+          <div key={feature.title} className="card card-border bg-base-200 p-8">
+            <div className="flex flex-col gap-2 items-start">
+              <div className="text-2xl py-2 px-3 bg-base-100 rounded-md">
+                {feature.emoji}
+              </div>
+              <h2 className="card-title text-xl font-bold">{feature.title}</h2>
+              <p className="text-lg">{feature.description}</p>
             </div>
-            <h2 className="card-title text-xl font-bold">{feature.title}</h2>
-            <p className="text-base text-gray-700">{feature.description}</p>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
 
-export default FeatureBlock;
+
+export default FeaturesBlock;
